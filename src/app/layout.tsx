@@ -29,19 +29,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <Head>
-        {/* Bootstrap CSS CDN */}
-        <link
-          href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css"
-          rel="stylesheet"
-        />
-        
-        {/* Font Awesome CDN */}
-        <link
-          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
-          rel="stylesheet"
-        />
-      </Head>
+      
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >

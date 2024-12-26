@@ -1,94 +1,175 @@
 import Image from "next/image"
-import { Download, Star, Upload } from 'lucide-react'
-import { Button } from "@/components/ui/button"
-import { Checkbox } from "@/components/ui/checkbox"
-import { Textarea } from "@/components/ui/textarea"
+import { Star, Upload } from 'lucide-react'
 
 export default function OrderTracking() {
   return (
-    <div className="max-w-3xl mx-auto p-4 space-y-6">
-      {/* Order Header */}
-      <div className="bg-white p-6 rounded-lg shadow-sm">
-        <div className="flex justify-between items-start shadow-md">
-          <div className="space-y-4">
-            <div className="flex items-center gap-2">
-              <span className="text-sm">Order Id : </span>
-              <a href="#" className="text-blue-600 text-sm">ajdj1323r34e3e3nn4r3322</a>
+    <div className="bg-gray-100 min-h-screen p-6">
+      <div className="max-w-full mx-auto space-y-6">
+        {/* Order Header */}
+        <div className="bg-white p-4 rounded-lg shadow-md">
+          <div className="flex items-center justify-between">
+            <div className="text-sm">
+              Order Id : <span className="text-blue-600">ajd1323r34e3e3nn4r3322</span>
             </div>
-            <div className="flex gap-4">
+            <button className="flex items-center gap-2 text-orange-500 border border-orange-500 px-4 py-2 rounded-lg">
+              <svg className="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" strokeWidth="2" strokeLinecap="round"/>
+                <polyline points="7 10 12 15 17 10" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                <line x1="12" y1="15" x2="12" y2="3" strokeWidth="2" strokeLinecap="round"/>
+              </svg>
+              Download invoice
+            </button>
+          </div>
+          <div className="flex items-center gap-4 mt-4">
+            <div className="w-16 h-16 relative rounded-lg overflow-hidden">
               <Image
-                src="/DELIVERY.png"
-                alt="Pickle"
-                width={80}
-                height={80}
-                className="rounded-lg"
+                src="/Delivery.png"
+                alt="Restaurant"
+                fill
+                className="object-cover"
               />
-              <div>
-                <p className="text-gray-600">Andhra pickle Store</p>
-                <h2 className="font-semibold">Chicken Pickle(250 g)</h2>
-              </div>
+            </div>
+            <div>
+              <div className="font-medium">Andhra pickle Store</div>
+              <div className="text-gray-600">Chicken Pickle(250 g)</div>
             </div>
           </div>
-          <Button variant="outline" className="flex items-center gap-2">
-            <Download className="w-4 h-4" />
-            Download invoice
-          </Button>
         </div>
-      </div>
 
-      {/* Delivery Address */}
-      <div className="bg-white p-6 rounded-lg shadow-sm space-y-6 shadow-md">
-        <h3 className="font-semibold text-lg">Delivery Address</h3>
-        <div className="space-y-2">
-          <p className="font-medium">Jagadeesh reddy</p>
-          <p className="text-gray-600">
-            mig-125 , near hostel,
-            <br />
-            kphb colony, hyderabad,
-            <br />
-            telengana, 500072
-          </p>
-          <p className="text-gray-600">Phone number - 77804xxxx6</p>
+        {/* Delivery Address */}
+        <div className="bg-white p-4 rounded-lg shadow">
+          <h2 className="font-medium mb-4">Delivery Address</h2>
+          <div className="space-y-2">
+            <div>jagadeesh reddy</div>
+            <div className="text-gray-600">
+              mig-125 , near hostel,<br />
+              kphb colony, hyderabad,<br />
+              telengana, 500072
+            </div>
+            <div className="text-gray-600">
+              phone number - 77804xxxx6
+            </div>
+          </div>
+          <div className="bg-white p-4 rounded-lg shadow-md">
+          <div className="relative">
+            <div className="flex justify-between mb-2">
+              <div className="text-center flex-1">
+                <div className="text-orange-500 font-medium">Order Confirmed</div>
+                <div className="text-sm text-gray-500">19 nov</div>
+              </div>
+              <div className="text-center flex-1">
+                <div className="font-medium">Shipped</div>
+                <div className="text-sm text-gray-500">11 nov</div>
+              </div>
+              <div className="text-center flex-1">
+                <div className="font-medium">Out for delivery</div>
+                <div className="text-sm text-gray-500">13 nov</div>
+              </div>
+              <div className="text-center flex-1">
+                <div className="font-medium">Delivered</div>
+                <div className="text-sm text-gray-500">13 nov</div>
+              </div>
+            </div>
+            <div className="relative flex items-center justify-between">
+              <div className="h-2 bg-orange-500 absolute left-0 right-0 top-1/2 -translate-y-1/2"></div>
+              <div className="w-4 h-4 bg-orange-500 rounded-full relative z-10"></div>
+              <div className="w-4 h-4 bg-orange-500 rounded-full relative z-10"></div>
+              <div className="w-4 h-4 bg-orange-500 rounded-full relative z-10"></div>
+              <div className="w-4 h-4 bg-orange-500 rounded-full relative z-10"></div>
+            </div>
+          </div>
+        </div>
         </div>
 
         {/* Order Timeline */}
-        <div className="relative">
-          <div className="absolute left-0 right-0 top-5 h-0.5 bg-orange-500"></div>
-          <div className="relative flex justify-between">
-            <div className="text-center">
-              <div className="w-4 h-4 bg-orange-500 rounded-full mx-auto mb-2"></div>
-              <p className="text-sm font-medium">Order Confirmed</p>
-              <p className="text-xs text-gray-500">10 nov</p>
+        {/* <div className="bg-white p-4 rounded-lg shadow">
+          <div className="relative">
+            <div className="flex justify-between mb-2">
+              <div className="text-center flex-1">
+                <div className="text-orange-500 font-medium">Order Confirmed</div>
+                <div className="text-sm text-gray-500">19 nov</div>
+              </div>
+              <div className="text-center flex-1">
+                <div className="font-medium">Shipped</div>
+                <div className="text-sm text-gray-500">11 nov</div>
+              </div>
+              <div className="text-center flex-1">
+                <div className="font-medium">Out for delivery</div>
+                <div className="text-sm text-gray-500">13 nov</div>
+              </div>
+              <div className="text-center flex-1">
+                <div className="font-medium">Delivered</div>
+                <div className="text-sm text-gray-500">13 nov</div>
+              </div>
             </div>
-            <div className="text-center">
-              <div className="w-4 h-4 bg-orange-500 rounded-full mx-auto mb-2"></div>
-              <p className="text-sm font-medium">Shipped</p>
-              <p className="text-xs text-gray-500">11 nov</p>
+            <div className="relative flex items-center justify-between">
+              <div className="h-2 bg-orange-500 absolute left-0 right-0 top-1/2 -translate-y-1/2"></div>
+              <div className="w-4 h-4 bg-orange-500 rounded-full relative z-10"></div>
+              <div className="w-4 h-4 bg-orange-500 rounded-full relative z-10"></div>
+              <div className="w-4 h-4 bg-orange-500 rounded-full relative z-10"></div>
+              <div className="w-4 h-4 bg-orange-500 rounded-full relative z-10"></div>
             </div>
-            <div className="text-center">
-              <div className="w-4 h-4 bg-orange-500 rounded-full mx-auto mb-2"></div>
-              <p className="text-sm font-medium">Out for delivery</p>
-              <p className="text-xs text-gray-500">13 nov</p>
+          </div>
+        </div> */}
+
+        <div className="flex gap-6">
+          {/* Rating Section */}
+          <div className="bg-white p-4 rounded-lg shadow-md flex-1">
+            <div className="flex justify-between items-center mb-4">
+              <div className="flex items-center gap-2">
+                <span className="font-medium">Rate the item - </span>
+                <div className="flex gap-1">
+                  {[1, 2, 3, 4, 5].map((star) => (
+                    <Star key={star} className="w-6 h-6 text-gray-300" />
+                  ))}
+                </div>
+              </div>
+              <button className="flex items-center gap-2 text-gray-600 border px-4 py-2 rounded-lg">
+                <Upload className="w-4 h-4" />
+                Upload images
+              </button>
             </div>
-            <div className="text-center">
-              <div className="w-4 h-4 bg-orange-500 rounded-full mx-auto mb-2"></div>
-              <p className="text-sm font-medium">Delivered</p>
-              <p className="text-xs text-gray-500">13 nov</p>
+            <textarea
+              placeholder="Write Review"
+              className="w-full h-32 border rounded-lg p-3 resize-none"
+            ></textarea>
+          </div>
+
+          {/* Bill Invoice */}
+          <div className="bg-white p-4 rounded-lg shadow-md flex-1">
+            <h2 className="font-medium mb-4">Bill Invoice</h2>
+            <div className="space-y-2">
+              <div className="flex justify-between">
+                <span>MRP total</span>
+                <span>₹999</span>
+              </div>
+              <div className="flex justify-between text-blue-600">
+                <span>Discount</span>
+                <span>-₹333</span>
+              </div>
+              <div className="flex justify-between">
+                <span>Delivery Fee</span>
+                <span>₹40</span>
+              </div>
+              <div className="flex justify-between">
+                <span>Handling Fee</span>
+                <span className="text-green-600">₹0 Free</span>
+              </div>
+              <div className="flex justify-between text-blue-600">
+                <span>Coupon Discount</span>
+                <span>-₹25</span>
+              </div>
+              <div className="flex justify-between font-medium bg-blue-50 p-2 rounded">
+                <span>Grand Total</span>
+                <span>₹696</span>
+              </div>
+              <div className="text-blue-600 text-sm">
+                You have saved ₹358 on this order
+              </div>
             </div>
           </div>
         </div>
       </div>
-
-      {/* Rating and Review */}
-      
-     <div className="col-span-2">
-       Rate the item- 
-       
-     </div>
-     <div className="col-span-6">
-        hii
-
-     </div>
     </div>
   )
 }
